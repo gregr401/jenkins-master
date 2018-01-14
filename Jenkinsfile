@@ -12,7 +12,7 @@ pipeline {
       steps {
         script {
           DOCKER_IMAGE1 = "${BUILD_REGISTRY}/${PROJECT_NAME}"
-          DOCKER_IMAGE2 = "${SECONDARY_REG}/$PROJECT_NAME}"
+          DOCKER_IMAGE2 = "${SECONDARY_REG}/${PROJECT_NAME}"
           sh "docker build -t ${DOCKER_IMAGE1}:${BUILD_NUMBER} -t ${DOCKER_IMAGE2}:${BUILD_NUMBER} -t ${DOCKER_IMAGE2}:latest ."
         }
       }
